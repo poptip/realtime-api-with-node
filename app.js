@@ -37,10 +37,10 @@ app.get('/:type', routes.index);
 
 // Create a new instance of the ntwitter Twitter client
 var twit = new twitter({
-  consumer_key: '6PO49aLzOeWbX73MElJdA',
-  consumer_secret: 'J36S8dT7UOf1nsd8tWtks8ht2KEQ9IxKgNWbUh5phQk',
-  access_token_key: '207708725-3Kq2aWkGcolr2goSoLk2VDXYFnRew0QjsyQDDTdV',
-  access_token_secret: '8X0JtJcfYFnFI50eaNiI5QFTMHkJ5Hv9FkhKyz0Vw'
+  consumer_key: 'YOUR_CONSUMER_KEY',
+  consumer_secret: 'YOUR_CONSUMER_SECRET',
+  access_token_key: 'YOUR_ACCESS_TOKEN',
+  access_token_secret: 'YOUR_ACCESS_SECRET'
 });
 
 // Start a new user stream using the provided credentials.
