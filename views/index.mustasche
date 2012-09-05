@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title></title>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+  <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+  <script type="text/javascript" src="/javascripts/main.js"></script>
+</head>
+<body>
+  <h1>Searching for...</h1>
+  <p>
+    <div class="handle"></div>
+    <div class="tweet"></div>
+  </p>
+</body>
+</html>
