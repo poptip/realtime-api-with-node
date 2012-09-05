@@ -5,6 +5,8 @@ var express = require('express')
   , io = require('socket.io').listen(app)
   , twitter = require('ntwitter')
   , filters = []
+  , mu = require('mu2')
+  , util = require('util')
   ;
 
 // Configurations
@@ -37,10 +39,10 @@ app.get('/:type', routes.index);
 
 // Create a new instance of the ntwitter Twitter client
 var twit = new twitter({
-  consumer_key: 'YOUR_CONSUMER_KEY',
-  consumer_secret: 'YOUR_CONSUMER_SECRET',
-  access_token_key: 'YOUR_ACCESS_TOKEN',
-  access_token_secret: 'YOUR_ACCESS_SECRET'
+  consumer_key: '6PO49aLzOeWbX73MElJdA',
+  consumer_secret: 'J36S8dT7UOf1nsd8tWtks8ht2KEQ9IxKgNWbUh5phQk',
+  access_token_key: '207708725-3Kq2aWkGcolr2goSoLk2VDXYFnRew0QjsyQDDTdV',
+  access_token_secret: '8X0JtJcfYFnFI50eaNiI5QFTMHkJ5Hv9FkhKyz0Vw'
 });
 
 // Start a new user stream using the provided credentials.
@@ -54,7 +56,7 @@ twit.stream('user', function(stream) {
   stream.on('data', function (data) {
     var text = data.text;
 
-    if (filters.length > 0)
+    if (filters.length > 0) {
       filters.forEach(function(filter) {
         if (text.match(filter)) {
           // This particular socket.io command allows us to
@@ -63,7 +65,9 @@ twit.stream('user', function(stream) {
           io.sockets.in(filter).emit('newTweet', data);
         }
       });
+    }
 
+    io.sockets.in('all').emit('newTweet', data);
   });
 
   // end protocol

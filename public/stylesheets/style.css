@@ -1,8 +1,16 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family:"Georgia";
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  font-size:70px;
+}
+
+.handle {
+  font-weight:800;
+  font-size:50px;
+}
+
+.tweet {
+  font-size:50px;
 }
