@@ -1,4 +1,4 @@
-## Realtim API with Node & Socket.io
+## Realtime API with Node & Socket.io
 ====================================
 
 If you've worked with node.js it's very likely you've used socket.io, the "magical" tool that let's you very easily send real-time content between the server and client (and vice versa) with ease.
